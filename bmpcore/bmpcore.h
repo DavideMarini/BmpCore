@@ -4,17 +4,16 @@
 #include <stdint.h>
 
 extern const size_t HEADER_SIZE;
+
 typedef enum{
-	BITMAPCOREHEADER = 12;
-	BITMAPCOREHEADER2 = 64;
-	BITMAPINFOHEADER = 40;
-	BITMAPV2INFOHEADER = 52;
-	BITMAPV3INFOHEADER = 56;
-	BITMAPV4HEADER = 108;
-	BITMAPV5HEADER = 124;
-	
-	
-} DIBHEADER_SIZE
+	BITMAPCOREHEADER_SIZE = 12,
+	BITMAPCOREHEADER2_SIZE = 64,
+	BITMAPINFOHEADER_SIZE = 40,
+	BITMAPV2INFOHEADER_SIZE = 52,
+	BITMAPV3INFOHEADER_SIZE = 56,
+	BITMAPV4HEADER_SIZE = 108,
+	BITMAPV5HEADER_SIZE = 124	
+} DIBHEADER_SIZE;
 
 #pragma pack(push, 1)
 
@@ -27,11 +26,17 @@ typedef struct{
 } BITMAPHEADER;
 
 typedef struct{
-	uint32_t bmHeaderSize;
-	uint32_t bmWidth;
-	uint32_t bmHeight;
-	
-	
+	uint32_t bmInfoHeaderSize;
+	int32_t bmWidth;
+	int32_t bmHeight;
+	uint16_t bmPlanes;
+	uint16_t bmBitCount;
+	uint32_t bmCompression;
+	uint32_t bmImageSize;
+	int32_t bmXPixelPerMeter;
+	int32_t bmYPixelPerMeter;
+	uint32_t bmColorUsed;
+	uint32_t bmImportantColor;
 } BITMAPINFOHEADER;
 
 #pragma pack(pop)

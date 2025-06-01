@@ -21,4 +21,5 @@ BITMAPHEADER* getHeader(char filePath []){
 	fclose(fstream);
 	
 	return header;
-} 
+}
+

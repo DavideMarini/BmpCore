@@ -10,8 +10,10 @@ int main(){
 	
 	printf("Caricamento Terminato\n");
 	
-	printf("%s\n", (char*)header);
-	printf("%d", header->bmFileSize);
+	printf("%d\n", header->bmFileSize);
+	printf("%d\n", header->bmReserved1);
+	printf("%d\n", header->bmReserved2);
+	printf("%d\n", header->bmPixelOffset);
 	
 	free(header);
 	
