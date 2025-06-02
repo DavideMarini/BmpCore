@@ -3,6 +3,7 @@
 #include "bmpcore/bmpcore.h"
 
 int main(){
+
 	
 	printf("Programma Iniziato\n");
 	

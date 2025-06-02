@@ -39,9 +39,15 @@ typedef struct{
 	uint32_t bmImportantColor;
 } BITMAPINFOHEADER;
 
+typedef struct{
+	BITMAPHEADER* fileHeader;
+	
+} BmpImage;
+
 #pragma pack(pop)
 
 BITMAPHEADER* getHeader(char filePath []);
+BITMAPINFOHEADER* getInfoHeader();
 
 
 
